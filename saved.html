@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your saved VacanSee classrooms at LPU.">
+  <title>Saved Classrooms | VacanSee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="saved">
+<header class="header">
+  <a class="brand" href="index.html"><span class="brand-icon">V</span><span>Vacan<span>See</span></span></a>
+  <nav id="nav"><a href="index.html">Home</a><a href="index.html#finder">Find a space</a><a href="index.html#classrooms">Classrooms</a><a href="index.html#how">How it works</a></nav>
+  <a class="saved-nav active-saved" href="saved.html">♡ Saved <b id="savedCount">0</b></a>
+  <button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
+</header>
+<main class="saved-main">
+  <section class="saved-intro">
+    <span class="kicker">YOUR PERSONAL SHORTLIST</span>
+    <h1 id="savedHeading">Your saved classrooms</h1>
+    <p>Classrooms you save on VacanSee are kept in this browser, even after you refresh the page.</p>
+    <div class="saved-actions"><a class="button primary" href="index.html#finder">Find more classrooms <b>→</b></a><button class="button clear-saved" id="clearSaved" type="button">Clear all saved</button></div>
+  </section>
+  <section class="section saved-results">
+    <div class="section-head"><div><span class="kicker">SAVED SPACES</span><h2>Your classroom list</h2><p>Remove a classroom using its heart button.</p></div></div>
+    <div class="room-grid" id="roomGrid" aria-live="polite"></div>
+    <div class="empty" id="empty" hidden></div>
+  </section>
+</main>
+<footer><a class="brand" href="index.html"><span class="brand-icon">V</span><span>Vacan<span>See</span></span></a><p>Find your space. Make it count.</p><small>Student project prototype · LPU campus visuals</small></footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body></html>

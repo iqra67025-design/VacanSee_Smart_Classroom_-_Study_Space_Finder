@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VacanSee helps LPU students discover timetable-based classroom and study-space availability.">
+  <title>VacanSee | LPU Study Space Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="#home"><span class="brand-icon">V</span><span>Vacan<span>See</span></span></a>
+  <nav id="nav"><a class="active" href="index.html">Home</a><a href="#finder">Find a space</a><a href="#classrooms">Classrooms</a><a href="#how">How it works</a></nav>
+  <a class="saved-nav" href="saved.html">♡ Saved <b id="savedCount">0</b></a>
+  <button class="menu" id="menu" aria-label="Toggle navigation">☰</button>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="hero-bg"></div><div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="eyebrow"><i></i> MADE FOR LOVELY PROFESSIONAL UNIVERSITY</div>
+      <h1>Your next study spot<br>is <span>closer than you think.</span></h1>
+      <p>Discover potentially vacant classrooms and study spaces across the LPU campus. Spend less time searching and more time learning.</p>
+      <div class="hero-actions"><a class="button primary" href="#finder">Find a study space <b>↗</b></a><a class="button outline" href="#how">How it works</a></div>
+      <div class="hero-foot"><span class="hero-check">✓</span> Timetable-based room discovery <span class="hero-sep">•</span> Simple campus search</div>
+    </div>
+    <div class="hero-caption"><span class="caption-dot"></span> LPU CAMPUS · PHAGWARA, PUNJAB</div>
+  </section>
+
+  <section class="finder" id="finder">
+    <div class="finder-title"><div><span class="kicker">SMART SPACE FINDER</span><h2>Discover Vacant Classrooms Across LPU</h2><p>Choose your preferred location and study time.</p></div><div class="finder-symbol">⌕</div></div>
+    <form id="searchForm" class="search-grid">
+      <label>BUILDING<select id="building"><option value="">Choose a building</option><option value="26">Block 26</option><option value="27">Block 27</option><option value="28">Block 28</option><option value="29">Block 29</option><option value="30">Block 30</option><option value="31">Block 31</option><option value="32">Block 32</option><option value="33">Block 33</option><option value="34">Block 34</option><option value="35">Block 35</option><option value="36">Block 36</option><option value="37">Block 37</option><option value="38">Block 38</option></select></label>
+      <label>FLOOR<select id="floor"><option value="all">Any floor</option><option value="0">Ground Floor</option><option value="1">1st Floor</option><option value="2">2nd Floor</option><option value="3">3rd Floor</option><option value="4">4th Floor</option><option value="5">5th Floor</option><option value="6">6th Floor</option><option value="7">7th Floor</option><option value="8">8th Floor</option></select></label>
+      <label>TIME SLOT<select id="time"><option value="now">Current slot</option><option value="09:20">9:20 AM</option><option value="09:50">9:50 AM</option><option value="10:20">10:20 AM</option><option value="10:50">10:50 AM</option><option value="11:20">11:20 AM</option><option value="11:50">11:50 AM</option><option value="12:20">12:20 PM</option><option value="12:50">12:50 PM</option><option value="13:20">1:20 PM</option><option value="13:50">1:50 PM</option><option value="14:20">2:20 PM</option><option value="14:50">2:50 PM</option><option value="15:20">3:20 PM</option><option value="15:50">3:50 PM</option><option value="16:20">4:20 PM</option><option value="16:50">4:50 PM</option></select></label>
+      <button class="button primary search-btn" type="submit">Search spaces <b>→</b></button>
+    </form>
+    <small class="disclaimer">ⓘ Demonstration timetable data. Availability is indicative and does not represent live room occupancy.</small>
+  </section>
+
+  <section class="section results-section results-hidden" id="classrooms" aria-live="polite">
+    <div class="section-head"><div><span class="kicker">EXPLORE THE CAMPUS</span><h2>Classrooms & study spaces</h2><p id="resultText">Choose a building and press Search spaces to see classroom availability.</p></div><div class="legend"><span><i class="green"></i> Available</span><span><i class="red"></i> Occupied</span><span><i class="amber"></i> Uncertain</span></div></div>
+    <div class="results-prompt" id="resultsPrompt"><span class="prompt-icon">⌕</span><h3>Your classroom results will appear here</h3><p>Select an LPU building above, choose a floor or time if needed, then click <strong>Search spaces</strong>.</p></div><div class="room-grid" id="roomGrid" aria-live="polite"></div>
+    <div class="empty" id="empty" hidden><h3>No matching rooms found</h3><p>Try changing your building, floor or time filters.</p><button id="clear" class="link-btn" type="button">Clear filters</button></div>
+  </section>
+
+  <section class="campus-strip">
+    <div class="campus-photo"><img src="images/lpu-campus-aerial.png" alt="Aerial view of the LPU campus"></div>
+    <div><span class="kicker">ONE CAMPUS, MANY POSSIBILITIES</span><h2>Make your free hours count.</h2><a class="inline-link campus-explore" href="https://iviewd.com/lpu2/" target="_blank" rel="noopener noreferrer">Explore Campus ↗</a></div>
+  </section>
+
+  <section class="section popular" id="popular">
+    <div class="section-head"><div><span class="kicker">SPACES FOR EVERY STUDY STYLE</span><h2>Explore study environments</h2><p>Use these campus images as visual examples of different space types.</p></div></div>
+    <div class="feature-grid">
+      <article class="feature-card"><img src="images/library-study.png" alt="Students studying together in a library"><div><span>QUIET & FOCUSED</span><h3>Library study areas</h3><p>For reading, revision and independent study.</p></div></article>
+      <article class="feature-card"><img src="images/computer-lab.png" alt="Students working in a computer laboratory"><div><span>COMPUTER LABS</span><h3>Technology spaces</h3><p>For coding practice and computer-based work.</p></div></article>
+      <article class="feature-card"><img src="images/classroom.png" alt="Students working in a classroom"><div><span>CLASSROOMS</span><h3>Flexible learning rooms</h3><p>For individual preparation and group activities.</p></div></article>
+      <article class="feature-card"><img src="images/lpu-campus-building.png" alt="University campus building"><div><span>CAMPUS BUILDINGS</span><h3>Find your way around</h3><p>Explore campus locations and study facilities.</p></div></article>
+    </div>
+    <p class="photo-note">Photos are supplied for the VacanSee project. Room availability shown above is sample timetable data.</p>
+  </section>
+
+  <section class="how" id="how"><div><span class="kicker">HOW VACANSEE WORKS</span><h2>Three steps to<br>your study space.</h2><p>A simple way to discover a suitable place during your free period.</p></div><div class="steps"><article><b>01</b><h3>Select your time</h3><p>Choose a building, floor and preferred time slot.</p></article><article><b>02</b><h3>Compare rooms</h3><p>Check room details and timetable-based availability.</p></article><article><b>03</b><h3>Save a favourite</h3><p>Keep useful classrooms handy in your browser.</p></article></div></section>
+</main>
+<footer><a class="brand" href="#home"><span class="brand-icon">V</span><span>Vacan<span>See</span></span></a><p>Find your space. Make it count.</p><small>Student project prototype · LPU campus visuals</small></footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body></html>
